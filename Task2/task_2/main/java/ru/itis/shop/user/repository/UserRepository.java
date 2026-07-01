@@ -2,9 +2,15 @@ package ru.itis.shop.user.repository;
 
 import ru.itis.shop.user.domain.User;
 
+import java.util.Optional;
+
 public interface UserRepository {
 
     void save(User user);
 
-    User findById(String id);
+    void updateData(String email, String profile);
+
+    Optional<User> findByEmail(String email);
+
+    Optional<User> findById(String id);
 }
